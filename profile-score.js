@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`https://api.brawlstars.com/v1/players/%23${tag}`, {
+        const response = await axios.get(`https://bsproxy.royaleapi.dev/v1/players/%23${tag}`, {
             headers: {
                 'Authorization': `Bearer ${BRAWL_STARS_API_KEY}`,
             },
