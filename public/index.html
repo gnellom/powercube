@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Profile Scorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        .brawler-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+        .brawler-icon img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen p-8 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold">Brawl Stars Profile Scorer</h1>
+            <button id="theme-toggle" class="px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-700">
+                Toggle Theme
+            </button>
+        </div>
+        <form id="profile-form" class="mb-8">
+            <div class="flex items-center space-x-4">
+                <input type="text" id="player-tag" name="player-tag" required placeholder="Enter player tag" class="flex-grow p-2 border rounded dark:bg-gray-700 dark:border-gray-600">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Get Profile</button>
+            </div>
+        </form>
+        <div id="result" class="hidden">
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold">Profile Score: <span id="profile-score" class="text-blue-600 dark:text-blue-400"></span></h2>
+                <div id="profile-info" class="grid grid-cols-2 gap-4 mt-4">
+                    <!-- Profile info will be inserted here -->
+                </div>
+            </div>
+            <div id="top-brawlers">
+                <h3 class="text-xl font-semibold mb-4">Top 7 Brawlers</h3>
+                <div id="brawlers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Brawler cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 text-sm text-gray-600 dark:text-gray-400 text-center">
+        Brawler data provided by <a href="https://brawlify.com" target="_blank" class="text-blue-500 hover:underline">Brawlify</a>
+    </div>
+    <script src="form_submission.js"></script>
+</body>
+</html>
