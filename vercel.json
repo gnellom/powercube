@@ -6,6 +6,8 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/profile-score.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/([^.]+\\.js)$", "dest": "/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
